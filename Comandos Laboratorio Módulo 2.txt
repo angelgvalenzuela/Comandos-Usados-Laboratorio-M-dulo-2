@@ -1,0 +1,42 @@
+Comandos usados practica 1 modulo 2
+==================================================
+dnf update
+dnf upgrade
+dnf repolist
+dnf repolist --all
+dnf search bashtop
+git clone https://github.com/aristocratos/bashtop.git
+cd bashtop/
+./bashtop
+sudo make uninstall
+cd ..
+rm -rf bashtop
+dnf autoremove -y
+dnf clean all
+
+Comandos usados practica 2 modulo 2
+==================================================
+nano /etc/crontab
+crontab -e
+crontab -l
+ls /tmp
+at now +1 minute
+atq
+cd /tmp
+date
+cd ..
+
+Comandos usados practica 3 modulo 2
+==================================================
+lsblk
+fdisk /dev/sdb
+mkfs.ext4 /dev/sdb
+cd Desktop
+mkdir GabrielFiles
+mount /dev/sdb /home/avalenzuela/Desktop/GabrielFiles
+cd GabrielFiles
+touch AdrianAlcantara.txt
+cd ..
+umount /dev/sdb
+mount /dev/sdb /mnt
+ls /mnt
