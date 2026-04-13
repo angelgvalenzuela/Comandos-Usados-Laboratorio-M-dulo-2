@@ -17,26 +17,47 @@ dnf clean all
 Comandos usados practica 2 modulo 2
 ==================================================
 nano /etc/crontab
-crontab -e
-crontab -l
+nano crontab -e
+#Act 11pm#
+#0 23 * * * dnf update -y#
+#Reinicio 3am#
+#0 3 * * 0 sbin/shutdown -r now#
+#Para comprobar tareas#
+nano crontab -l
+#Listar contenido de carpeta de archivos temporales#
 ls /tmp
 at now +1 minute
+rm -rf /tmp/*
+*ctrl + d*
 atq
-cd /tmp
-date
-cd ..
+#Comprobar realización de la tarea#
+cd /tmp + ls
+
 
 Comandos usados practica 3 modulo 2
 ==================================================
+*Añadir un nuevo disco duro desde VMWare*
+sudo su
+#Para ver los discos del sistema#
 lsblk
+#Crear particion del disco#
 fdisk /dev/sdb
+(n para nueva particion)
+(p para particion secundaria)
+(w para guadar y salir)
+#Para formatear la particion#
 mkfs.ext4 /dev/sdb
+
 cd Desktop
 mkdir GabrielFiles
+#Montar particion en la carpeta#
 mount /dev/sdb /home/avalenzuela/Desktop/GabrielFiles
+#Entrar a la carpeta y crear archivo#
 cd GabrielFiles
 touch AdrianAlcantara.txt
+#Desmontar unidad y montarla en el directorio mnt#
 cd ..
 umount /dev/sdb
 mount /dev/sdb /mnt
+#Comprobar que los archivos se hayan montado#
 ls /mnt
